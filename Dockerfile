@@ -22,4 +22,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the app with Gunicorn
-CMD ["gunicorn", "--chdir", "phishguard", "app:app", "--bind", "0.0.0.0:${PORT:-8000}"] 
+CMD bash -c 'gunicorn --chdir phishguard app:app --bind 0.0.0.0:${PORT:-8000}' 
