@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import os
 import pandas as pd
-from utils.preprocess_email import clean_email
+from phishguard.utils.preprocess_email import clean_email
 from utils.safe_browsing import check_google_safebrowsing
 import base64
 from io import BytesIO
