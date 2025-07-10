@@ -1,0 +1,11 @@
+2025-07-09T18:43:57.962466	http://appleid-verify-access.com/login	{'error': {'code': 403, 'message': "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.", 'status': 'PERMISSION_DENIED'}}
+2025-07-09T18:45:42.165163	https://amazon02atonline51.online	{'error': {'code': 403, 'message': "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.", 'status': 'PERMISSION_DENIED'}}
+2025-07-09T18:45:42.451614	https://amazon02atonline51.online	{'error': {'code': 403, 'message': "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.", 'status': 'PERMISSION_DENIED'}}
+2025-07-10T04:48:00.535109	https://www.google.com	{}
+2025-07-10T04:49:59.148068	https://www.google.com	{}
+2025-07-10T05:15:31.321689	https://idemia-mobile-id.com/testqr-success	{}
+2025-07-10T05:27:12.714684	https://www.zzoypvpz.duckdns.org/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://www.zzoypvpz.duckdns.org/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
+2025-07-10T05:32:27.214443	https://vivasorte-ofiicial.netlify.app/	{}
+2025-07-10T05:34:15.672291	https://www.zzoypvpz.duckdns.org/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://www.zzoypvpz.duckdns.org/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
+2025-07-10T06:06:21.138387	https://www.zzoypvpz.duckdns.org/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://www.zzoypvpz.duckdns.org/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
+2025-07-10T06:06:41.022361	https://www.google.com	{}

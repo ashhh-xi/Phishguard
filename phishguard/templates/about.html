@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - PhishGuard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .about-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .mission-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .mission-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border-left: 4px solid #667eea;
+        }
+
+        .mission-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .mission-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .features-overview {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .features-overview h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            border-left: 4px solid #28a745;
+        }
+
+        .feature-item h3 {
+            color: #28a745;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .stats-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stats-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .team-section {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .team-section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .mission-grid,
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🛡️ PhishGuard</a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>About PhishGuard</h1>
+        <p>Protecting users from phishing attacks with advanced AI technology</p>
+    </section>
+
+    <div class="container">
+        <div class="about-section">
+            <h2>Our Story</h2>
+            <p>
+                PhishGuard was born from the growing need to protect individuals and organizations from sophisticated phishing attacks. 
+                With cyber threats becoming increasingly complex and targeted, traditional security measures are no longer sufficient.
+            </p>
+            <p>
+                Our team of cybersecurity experts and AI researchers came together to develop a comprehensive solution that combines 
+                the power of machine learning with real-time threat intelligence to detect and prevent phishing attacks before they can cause harm.
+            </p>
+            <p>
+                Today, PhishGuard serves as a trusted shield against phishing attempts, offering three powerful detection methods: 
+                AI-powered email analysis, QR code scanning with real-time camera support, and direct URL analysis with comprehensive security checks.
+            </p>
+        </div>
+
+        <div class="mission-section">
+            <h2>Our Mission</h2>
+            <p>
+                We are committed to making the internet a safer place by providing accessible, accurate, and reliable phishing detection tools 
+                that protect users from cyber threats while maintaining their privacy and security.
+            </p>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h3>🔒 Protect</h3>
+                    <p>Shield users from sophisticated phishing attacks using advanced AI and machine learning algorithms.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>🎯 Educate</h3>
+                    <p>Raise awareness about phishing threats and provide detailed explanations of detected risks.</p>
+                </div>
+                <div class="mission-card">
+                    <h3>🚀 Innovate</h3>
+                    <p>Continuously improve our detection capabilities through research and technological advancement.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-overview">
+            <h2>What We Offer</h2>
+            <p>
+                PhishGuard provides a comprehensive suite of phishing detection tools designed to protect users across different attack vectors:
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>📧 Email Detection</h3>
+                    <p>Advanced AI-powered analysis of email content to detect sophisticated phishing attempts with high accuracy rates.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>📱 QR Code Scanning</h3>
+                    <p>Real-time QR code scanning with camera support and image upload capabilities for instant URL analysis.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🔗 Manual URL Analysis</h3>
+                    <p>Direct URL input and analysis with comprehensive security checks using multiple threat intelligence sources.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🛡️ Multi-Layer Security</h3>
+                    <p>Combines Google Safe Browsing, VirusTotal integration, and heuristic analysis for maximum protection.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-section">
+            <h2>Our Impact</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Detection Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Detection Methods</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">70+</div>
+                    <div class="stat-label">Security Vendors</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">< 1s</div>
+                    <div class="stat-label">Response Time</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-section">
+            <h2>Our Team</h2>
+            <p>
+                PhishGuard is developed by a dedicated team of cybersecurity professionals, AI researchers, and software engineers 
+                who are passionate about protecting users from cyber threats.
+            </p>
+            <p>
+                Our team combines expertise in machine learning, cybersecurity, web development, and user experience design 
+                to create a powerful yet user-friendly phishing detection platform.
+            </p>
+            
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Have questions or suggestions? We'd love to hear from you!</p>
+                <p>Email: contact@phishguard.com</p>
+                <p>GitHub: github.com/phishguard</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

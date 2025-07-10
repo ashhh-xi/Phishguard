@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - PhishGuard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li:before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .tech-stack {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .tech-stack h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+        }
+
+        .tech-item:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .tech-item h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">🛡️ PhishGuard</a>
+            <ul class="nav-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/features">Features</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Advanced Features</h1>
+        <p>Discover the powerful capabilities of our AI-powered phishing detection system</p>
+    </section>
+
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📧</div>
+                <h3>Email Phishing Detection</h3>
+                <p>Advanced AI-powered analysis of email content to detect sophisticated phishing attempts.</p>
+                <ul class="feature-list">
+                    <li>Natural language processing</li>
+                    <li>Pattern recognition</li>
+                    <li>Urgency detection</li>
+                    <li>Sender analysis</li>
+                    <li>Link analysis</li>
+                    <li>Confidence scoring</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>QR Code Scanning</h3>
+                <p>Real-time QR code scanning with multiple input methods for comprehensive URL analysis.</p>
+                <ul class="feature-list">
+                    <li>Live camera scanning</li>
+                    <li>Image upload support</li>
+                    <li>Multiple QR formats</li>
+                    <li>Instant URL extraction</li>
+                    <li>Mobile-optimized</li>
+                    <li>Cross-platform compatibility</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <h3>Manual URL Detection</h3>
+                <p>Direct URL analysis with comprehensive security checks and threat assessment.</p>
+                <ul class="feature-list">
+                    <li>Direct URL input</li>
+                    <li>Real-time validation</li>
+                    <li>Multiple security APIs</li>
+                    <li>Heuristic analysis</li>
+                    <li>Threat intelligence</li>
+                    <li>Detailed risk scoring</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Multi-Layer Security</h3>
+                <p>Comprehensive security analysis using multiple detection methods and APIs.</p>
+                <ul class="feature-list">
+                    <li>Google Safe Browsing API</li>
+                    <li>VirusTotal integration</li>
+                    <li>Heuristic analysis</li>
+                    <li>Domain reputation</li>
+                    <li>SSL certificate checks</li>
+                    <li>Real-time threat data</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Analysis</h3>
+                <p>Machine learning algorithms trained on extensive phishing datasets for accurate detection.</p>
+                <ul class="feature-list">
+                    <li>Deep learning models</li>
+                    <li>Pattern recognition</li>
+                    <li>Behavioral analysis</li>
+                    <li>Continuous learning</li>
+                    <li>High accuracy rates</li>
+                    <li>False positive reduction</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Detailed Reporting</h3>
+                <p>Comprehensive analysis reports with actionable insights and risk assessments.</p>
+                <ul class="feature-list">
+                    <li>Risk scoring system</li>
+                    <li>Detailed explanations</li>
+                    <li>Visual indicators</li>
+                    <li>Threat categorization</li>
+                    <li>Recommendations</li>
+                    <li>Export capabilities</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tech-stack">
+            <h2>Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <h4>Backend</h4>
+                    <p>Flask, Python</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Frontend</h4>
+                    <p>HTML5, CSS3, JavaScript</p>
+                </div>
+                <div class="tech-item">
+                    <h4>AI/ML</h4>
+                    <p>Scikit-learn, TensorFlow</p>
+                </div>
+                <div class="tech-item">
+                    <h4>QR Processing</h4>
+                    <p>pyzbar, PIL, html5-qrcode</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Security APIs</h4>
+                    <p>Google Safe Browsing, VirusTotal</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Deployment</h4>
+                    <p>Heroku, Docker</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
