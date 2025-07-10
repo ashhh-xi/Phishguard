@@ -3,6 +3,7 @@ FROM python:3.10-slim
 
 # Set work directory
 WORKDIR /app
+ENV PYTHONPATH=/app
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libzbar0 \
@@ -22,7 +23,4 @@ COPY . .
 EXPOSE 8000
 
 # Use JSON array form for local/dev (fast, robust signal handling)
-CMD ["gunicorn", "phishguard.app:app", "--bind", "0.0.0.0:8000"]
-
-# For Railway or platforms that require dynamic port, uncomment below and comment out the above:
-# CMD bash -c 'gunicorn phishguard.app:app --bind 0.0.0.0:${PORT:-8000}' 
+CMD gunicorn phishguard.app:app --bind 0.0.0.0:${PORT:-8000} 
