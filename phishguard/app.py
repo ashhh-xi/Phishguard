@@ -10,9 +10,9 @@ from PIL import Image
 import json
 
 # Import QR detection modules
-from utils.qr_decoder import decode_qr_image
-from utils.heuristics import analyze_url_heuristics
-from utils.virustotal import check_virustotal
+from phishguard.utils.qr_decoder import decode_qr_image
+from phishguard.utils.heuristics import analyze_url_heuristics
+from phishguard.utils.virustotal import check_virustotal
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
