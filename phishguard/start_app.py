@@ -2,7 +2,7 @@
 """
 PhishGuard QR - Startup Script
 """
-#import os
+import os
 from dotenv import load_dotenv
 
 
