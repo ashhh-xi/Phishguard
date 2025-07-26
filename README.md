@@ -257,11 +257,16 @@ phishguard/
 1. Build the Docker image:
    ```bash
    docker build -t phishguard .
+   or
    ```
+    docker-compose build --no-cache
+    docker-compose up 
 2. Run the container:
    ```bash
    docker run -p 5000:5000 phishguard
+
    ```
+
 
 ## 🤝 Contributing
 

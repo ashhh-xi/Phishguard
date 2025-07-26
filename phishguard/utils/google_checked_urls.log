@@ -9,3 +9,11 @@
 2025-07-10T05:34:15.672291	https://www.zzoypvpz.duckdns.org/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://www.zzoypvpz.duckdns.org/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
 2025-07-10T06:06:21.138387	https://www.zzoypvpz.duckdns.org/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://www.zzoypvpz.duckdns.org/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
 2025-07-10T06:06:41.022361	https://www.google.com	{}
+2025-07-26T08:12:36.215450	https://www.google.com	{}
+2025-07-26T08:13:08.653471	https://www.zzoypvpz.duckdns.org/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://www.zzoypvpz.duckdns.org/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
+2025-07-26T08:14:56.117906	http://en.m.wikipedia.org	{}
+2025-07-26T08:16:24.656636	https://help-netflix-signup.com/	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://help-netflix-signup.com/'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
+2025-07-26T08:17:13.765690	https://www.shopptime.site/	{}
+2025-07-26T08:17:57.456026	https://swap-shibtoken.net	{}
+2025-07-26T08:18:37.487237	https://help-netflix-signup.com/index.php	{'matches': [{'threatType': 'SOCIAL_ENGINEERING', 'platformType': 'ANY_PLATFORM', 'threat': {'url': 'https://help-netflix-signup.com/index.php'}, 'cacheDuration': '300s', 'threatEntryType': 'URL'}]}
+2025-07-26T11:30:05.168918	https://www.google.com	{}

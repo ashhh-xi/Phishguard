@@ -2,17 +2,17 @@ from flask import Flask, request, jsonify, render_template
 import joblib
 import os
 import pandas as pd
-from phishguard.utils.preprocess_email import clean_email
-from phishguard.utils.safe_browsing import check_google_safebrowsing
+from utils.preprocess_email import clean_email
+from utils.safe_browsing import check_google_safebrowsing
 import base64
 from io import BytesIO
 from PIL import Image
 import json
 
 # Import QR detection modules
-from phishguard.utils.qr_decoder import decode_qr_image
-from phishguard.utils.heuristics import analyze_url_heuristics
-from phishguard.utils.virustotal import check_virustotal
+from utils.qr_decoder import decode_qr_image
+from utils.heuristics import analyze_url_heuristics
+from utils.virustotal import check_virustotal
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 16MB max file size
@@ -58,15 +58,15 @@ def predict_email():
         'confidence': round(float(phishing_conf), 2)
     })
 
+
 @app.route('/check-url-google', methods=['POST'])
 def check_url_google():
-    """Original Google Safe Browsing endpoint"""
+    """New Google Safe Browsing endpoint"""
     data = request.get_json()
     url = data.get('url')
     if not url:
         return jsonify({'error': 'No URL provided'}), 400
-    api_key = os.getenv('GOOGLE_SAFE_BROWSING_API_KEY', '')
-    result = check_google_safebrowsing(url, api_key)
+    result = google_safe_browsing_api(url)
     return jsonify(result)
 
 # New QR detection routes

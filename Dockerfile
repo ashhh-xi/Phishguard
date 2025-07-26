@@ -1,26 +1,22 @@
-# Use official Python 3.10 image
 FROM python:3.10-slim
 
-# Set work directory
 WORKDIR /app
-ENV PYTHONPATH=/app
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    libzbar0 \
-    && rm -rf /var/lib/apt/lists/*
 
-# Install system dependencies (if needed)
+# Install system dependencies for numpy, pandas, etc.
+RUN apt-get update && \
+    apt-get install -y build-essential libzbar0 libglib2.0-0 libsm6 libxext6 libxrender-dev python3-dev g++ && \
+    rm -rf /var/lib/apt/lists/*
 
-
-# Copy requirements and install
 COPY requirements.txt .
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip setuptools wheel
+RUN pip install --no-cache-dir --force-reinstall -r requirements.txt
 
-# Copy the rest of the code
-COPY . .
+COPY phishguard/ .
 
-# Expose port (Flask default is 5000, Gunicorn default is 8000)
-EXPOSE 8000
+EXPOSE 5000
 
-# Use JSON array form for local/dev (fast, robust signal handling)
-CMD gunicorn phishguard.app:app --bind 0.0.0.0:${PORT:-8000} 
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=5000
+
+CMD ["python", "start_app.py"]

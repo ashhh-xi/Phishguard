@@ -2,12 +2,30 @@
 """
 PhishGuard QR - Startup Script
 """
+import os
+from dotenv import load_dotenv
 
+# Load the .env file
+load_dotenv(os.path.join(os.getcwd(), 'phishguard', '.env'))
+
+# Print out the API keys
+print("GOOGLE_SAFE_BROWSING_API_KEY:", os.getenv("GOOGLE_SAFE_BROWSING_API_KEY"))
+print("VIRUSTOTAL_API_KEY:", os.getenv("VIRUSTOTAL_API_KEY"))
+
+# Rest of the code remains the same
+from utils.safe_browsing import check_google_safebrowsing
+# Rest of the code remains the same
 import os
 import sys
 import webbrowser
 import time
 from pathlib import Path
+from utils.safe_browsing import check_browsing
+
+
+# ... (other code remains the same)
+
+
 
 def check_dependencies():
     """Check if all required dependencies are installed"""
@@ -82,7 +100,9 @@ def start_application():
         
         # Get the port from environment or use default
         port = int(os.getenv("PORT", 5000))
-        host = os.getenv("HOST", "127.0.0.1")
+        host = os.getenv("HOST", "0.0.0.0")
+
+        # host = os.getenv("HOST", "127.0.0.1")
         
         print(f"🌐 Server will be available at: http://{host}:{port}")
         print("📱 Camera scanning requires HTTPS in production")

@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  phishguard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=production
+      - FLASK_DEBUG=False
+      - GOOGLE_SAFE_BROWSING_API_KEY=${GOOGLE_SAFE_BROWSING_API_KEY}
+      - VIRUSTOTAL_API_KEY=${VIRUSTOTAL_API_KEY}
+    volumes:
+      - ./phishguard:/app
+    restart: unless-stopped
