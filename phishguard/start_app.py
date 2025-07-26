@@ -2,11 +2,28 @@
 """
 PhishGuard QR - Startup Script
 """
+#import os
+#from dotenv import load_dotenv
+
+
+
+# Load the .env file
+#load_dotenv(os.path.join(os.getcwd(), 'phishguard', '.env'))
 import os
 from dotenv import load_dotenv
 
-# Load the .env file
-load_dotenv(os.path.join(os.getcwd(), 'phishguard', '.env'))
+# Load environment variables only in development
+if os.getenv("RENDER") != "true":
+    # Assume we're running locally
+    dotenv_path = os.path.join(os.getcwd(), 'phishguard', '.env')
+    if os.path.exists(dotenv_path):
+        print("📄 Loading local environment variables...")
+        load_dotenv(dotenv_path)
+    else:
+        print("⚠️  .env file not found locally.")
+
+# Now all environment variables are accessible via os.getenv()
+
 
 # Print out the API keys
 print("GOOGLE_SAFE_BROWSING_API_KEY:", os.getenv("GOOGLE_SAFE_BROWSING_API_KEY"))
